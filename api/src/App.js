@@ -1,24 +1,50 @@
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 
 // Pages
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Single from "./pages/Single";
+import Write from "./pages/Write";
 
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+const Layout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <Navbar />
-        <Home />,
-      </div>
-    ),
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/single",
+        element: <Single />,
+      },
+      {
+        path: "/write",
+        element: <Write />,
+      },
+    ],
   },
   {
     path: "/register",
