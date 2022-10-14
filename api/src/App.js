@@ -4,7 +4,6 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import "./App.css";
 
 // Pages
 import Home from "./pages/Home";
