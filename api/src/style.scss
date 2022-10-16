@@ -7,6 +7,12 @@ $lightblue: #d0e6f0;
 
   .container {
     width: 1024px;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
     // Login & Register
     .auth {
       display: flex;

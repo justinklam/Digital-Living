@@ -13,7 +13,9 @@ const Navbar = () => {
           <img src={Logo} alt="logo" />
         </div>
         <div className="links">
-          <Link>Art</Link>
+          <Link className="link" to="/?cat=art">
+            <h6>ART</h6>
+          </Link>
         </div>
       </div>
     </div>
