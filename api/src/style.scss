@@ -21,7 +21,7 @@ $lightblue: #d0e6f0;
       form {
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 50px;
         background-color: white;
         width: 200px;
         gap: 20px;
@@ -31,6 +31,14 @@ $lightblue: #d0e6f0;
         padding: 10px;
         border: none;
         border-bottom: 1px solid grey;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        background-color: teal;
+        cursor: pointer;
+        color: white;
       }
     }
   }
