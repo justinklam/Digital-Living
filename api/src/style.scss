@@ -61,6 +61,8 @@ $lightblue: #d0e6f0;
     .navbar {
       .container {
         display: flex;
+        padding: 10px 0px;
+        justify-content: space-between;
 
         .logo {
         }
