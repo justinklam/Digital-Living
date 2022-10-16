@@ -26,6 +26,12 @@ $lightblue: #d0e6f0;
         width: 200px;
         gap: 20px;
       }
+
+      input {
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid grey;
+      }
     }
   }
 }
