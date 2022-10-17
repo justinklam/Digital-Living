@@ -79,7 +79,17 @@ $lightblue: #d0e6f0;
 
         .links {
           display: flex;
+          align-items: center;
           gap: 10px;
+        }
+
+        h6 {
+          font-size: 16px;
+          font-weight: 300;
+        }
+
+        span {
+          cursor: pointer;
         }
       }
     }
