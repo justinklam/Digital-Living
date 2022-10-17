@@ -101,6 +101,7 @@ $lightblue: #d0e6f0;
           height: 50px;
           width: 50px;
           border-radius: 50%;
+          // border is given here so that it won't resize on hover
           border: 1px solid white;
 
           &:hover {
