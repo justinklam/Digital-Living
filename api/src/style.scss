@@ -91,6 +91,17 @@ $lightblue: #d0e6f0;
         span {
           cursor: pointer;
         }
+
+        .write {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 300;
+          background-color: $lightblue;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+        }
       }
     }
   }

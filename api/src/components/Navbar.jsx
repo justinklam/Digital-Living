@@ -32,7 +32,7 @@ const Navbar = () => {
           <span>Logout</span>
           <span className="write">
             <Link className="link" to="/write">
-              Write
+              Post!
             </Link>
           </span>
         </div>
