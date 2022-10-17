@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Image assets
 import Logo from "../img/logo.png";
-import Logo2 from "../img/logo.svg";
+// import Logo2 from "../img/logo.svg";
 
 const Navbar = () => {
   return (
@@ -28,6 +28,11 @@ const Navbar = () => {
           <Link className="link" to="/?cat=technology">
             <h6>TECHNOLOGY</h6>
           </Link>
+          <span>User 1</span>
+          <span>Logout</span>
+          <span className="write">
+            <Link to="/write">Write</Link>
+          </span>
         </div>
       </div>
     </div>
