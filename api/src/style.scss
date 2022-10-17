@@ -101,6 +101,13 @@ $lightblue: #d0e6f0;
           height: 50px;
           width: 50px;
           border-radius: 50%;
+          border: 1px solid white;
+
+          &:hover {
+            color: teal;
+            background-color: white;
+            border: 1px solid teal;
+          }
         }
       }
     }
