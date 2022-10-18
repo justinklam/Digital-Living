@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const posts = [
@@ -28,6 +29,11 @@ const Home = () => {
         {posts.map((post) => {
           <div className="post" key={post.id}>
             <img src={post.img} alt="img" />
+            <div className="content">
+              <Link to={`/post/${post.id}`}>
+                <h1>{post.title}</h1>
+              </Link>
+            </div>
           </div>;
         })}
       </div>
