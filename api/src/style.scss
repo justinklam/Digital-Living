@@ -138,15 +138,22 @@ $lightblue: #d0e6f0;
       .posts {
         display: flex;
         flex-direction: column;
-        gap: 150px;
         margin-top: 50px;
-      }
+        gap: 150px;
 
-      .post {
-        display: flex;
+        .post {
+          display: flex;
 
-        .img {
-          flex: 1;
+          .img {
+            flex: 2;
+
+            img {
+              width: 100%;
+            }
+          }
+          .content {
+            flex: 3;
+          }
         }
       }
     }
