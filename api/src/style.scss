@@ -132,5 +132,15 @@ $lightblue: #d0e6f0;
         color: inherit;
       }
     }
+
+    // Home
+    .home {
+      .posts {
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+        margin-top: 50px;
+      }
+    }
   }
 }
