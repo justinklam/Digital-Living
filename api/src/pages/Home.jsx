@@ -22,7 +22,17 @@ const Home = () => {
     },
   ];
 
-  return <div className="home">Home</div>;
+  return (
+    <div className="home">
+      <div className="posts">
+        {posts.map((post) => {
+          <div className="post" key={post.id}>
+            <img src={post.img} alt="img" />
+          </div>;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Home;
