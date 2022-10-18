@@ -141,6 +141,14 @@ $lightblue: #d0e6f0;
         gap: 150px;
         margin-top: 50px;
       }
+
+      .post {
+        display: flex;
+
+        .img {
+          flex: 1;
+        }
+      }
     }
   }
 }
