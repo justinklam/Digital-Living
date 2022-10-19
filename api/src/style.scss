@@ -193,6 +193,12 @@ $lightblue: #d0e6f0;
               border: 1px solid $lightblue;
               color: teal;
               cursor: pointer;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightblue;
+                color: black;
+              }
             }
           }
         }
