@@ -205,5 +205,12 @@ $lightblue: #d0e6f0;
         }
       }
     }
+
+    // Single
+
+    .single {
+      display: flex;
+      gap: 50px;
+    }
   }
 }
