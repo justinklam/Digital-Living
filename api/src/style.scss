@@ -172,6 +172,9 @@ $lightblue: #d0e6f0;
             }
           }
           .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             flex: 3;
           }
         }
