@@ -176,6 +176,18 @@ $lightblue: #d0e6f0;
             flex-direction: column;
             justify-content: space-between;
             flex: 3;
+
+            h1 {
+              font-size: 48px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+
+            button {
+              width: max-content;
+            }
           }
         }
       }
