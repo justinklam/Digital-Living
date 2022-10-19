@@ -145,6 +145,11 @@ $lightblue: #d0e6f0;
           display: flex;
           gap: 100px;
 
+          // if post is odd number
+          &:nth-child(2n + 1) {
+            flex-direction: row-reverse;
+          }
+
           .img {
             flex: 2;
 
