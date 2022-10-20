@@ -1,5 +1,9 @@
 import React from "react";
 
+// Image assets
+import editIcon from "../img/edit.png";
+import deleteIcon from "../img/delete.png";
+
 const Single = () => {
   return (
     <div className="single">
@@ -16,6 +20,10 @@ const Single = () => {
           <div className="info">
             <span>user1</span>
             <p>Posted 2 days ago</p>
+          </div>
+          <div className="edit">
+            <img src={editIcon} alt="edit" />
+            <img src={deleteIcon} alt="delete" />
           </div>
         </div>
       </div>
