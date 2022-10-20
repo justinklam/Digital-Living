@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Image assets
 import editIcon from "../img/edit.png";
@@ -22,7 +23,9 @@ const Single = () => {
             <p>Posted 2 days ago</p>
           </div>
           <div className="edit">
-            <img src={editIcon} alt="edit" />
+            <Link to={`/write?edit=2`}>
+              <img src={editIcon} alt="edit" />
+            </Link>
             <img src={deleteIcon} alt="delete" />
           </div>
         </div>
