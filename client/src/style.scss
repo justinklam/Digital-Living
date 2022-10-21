@@ -249,11 +249,20 @@ $lightblue: #d0e6f0;
             cursor: pointer;
           }
 
-          // fix hover effect later
-          &:hover {
-            border: 1px solid white;
-            background-color: $lightblue;
-            color: black;
+          .edit-inner {
+            &:hover {
+              border: 1px solid white;
+              background-color: $lightblue;
+              color: black;
+            }
+          }
+
+          .delete-inner {
+            &:hover {
+              border: 1px solid white;
+              background-color: $lightblue;
+              color: black;
+            }
           }
         }
 
