@@ -241,7 +241,7 @@ $lightblue: #d0e6f0;
 
         .edit {
           display: flex;
-          gap: 5px;
+          gap: 20px;
 
           img {
             width: 20px;
@@ -255,10 +255,15 @@ $lightblue: #d0e6f0;
             background-color: $lightblue;
             color: black;
           }
+        }
 
-          .menu {
-            flex: 2;
-          }
+        h1 {
+          font-size: 40px;
+          color: #333;
+        }
+
+        .menu {
+          flex: 2;
         }
       }
     }
