@@ -213,6 +213,9 @@ $lightblue: #d0e6f0;
       gap: 50px;
 
       .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
         flex: 5;
 
         img {
