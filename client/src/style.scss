@@ -248,11 +248,18 @@ $lightblue: #d0e6f0;
             height: 20px;
             cursor: pointer;
           }
-        }
-      }
 
-      .menu {
-        flex: 2;
+          // fix hover effect later
+          &:hover {
+            border: 1px solid white;
+            background-color: $lightblue;
+            color: black;
+          }
+
+          .menu {
+            flex: 2;
+          }
+        }
       }
     }
   }
