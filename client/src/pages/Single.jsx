@@ -24,9 +24,11 @@ const Single = () => {
           </div>
           <div className="edit">
             <Link to={`/write?edit=2`}>
-              <img src={editIcon} alt="edit" />
+              <img className="edit-inner" src={editIcon} alt="edit" />
             </Link>
-            <img src={deleteIcon} alt="delete" />
+            <Link>
+              <img className="delete-inner" src={deleteIcon} alt="delete" />
+            </Link>
           </div>
         </div>
         <h1>This is the title</h1>
