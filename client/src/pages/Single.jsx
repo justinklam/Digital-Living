@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Components
+import Menu from "../components/Menu";
+
 // Image assets
 import editIcon from "../img/edit.png";
 import deleteIcon from "../img/delete.png";
@@ -73,7 +76,7 @@ const Single = () => {
           risus, at ultrices dolor fermentum et. Mauris eu fermentum lacus.
         </p>
       </div>
-      <div className="menu">Menu</div>
+      <Menu />
     </div>
   );
 };
