@@ -34,7 +34,7 @@ const Single = () => {
             </Link>
           </div>
         </div>
-        <h1>This is the title</h1>
+        <h1>Title - Placeholder</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut leo a
           lectus rutrum ornare ac laoreet lorem. Cras sit amet purus sed arcu
