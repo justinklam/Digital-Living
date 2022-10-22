@@ -279,8 +279,12 @@ $lightblue: #d0e6f0;
           line-height: 30px;
         }
 
+        // Menu Sub-section
         .menu {
+          display: flex;
+          flex-direction: column;
           flex: 2;
+          gap: 25px;
         }
       }
     }
