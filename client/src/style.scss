@@ -291,6 +291,12 @@ $lightblue: #d0e6f0;
           font-size: 20px;
           color: #555;
         }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
       }
     }
   }
