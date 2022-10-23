@@ -163,12 +163,14 @@ $lightblue: #d0e6f0;
               left: -20px;
               background-color: $lightblue;
               z-index: -1;
+              border-radius: 10px;
             }
 
             img {
               width: 100%;
               max-height: 70%;
               object-fit: cover;
+              border-radius: 10px;
             }
           }
           .content {
@@ -222,6 +224,7 @@ $lightblue: #d0e6f0;
           width: 100%;
           height: 300px;
           object-fit: cover;
+          border-radius: 10px;
         }
 
         .user {
@@ -301,6 +304,7 @@ $lightblue: #d0e6f0;
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 10px;
           }
 
           h2 {
