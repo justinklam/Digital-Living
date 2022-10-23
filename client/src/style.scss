@@ -333,7 +333,7 @@ $lightblue: #d0e6f0;
 
     // Write
 
-    .write {
+    .writePost {
       display: flex;
       margin-top: 20px;
       gap: 20px;
@@ -344,7 +344,9 @@ $lightblue: #d0e6f0;
 
       .menu {
         display: flex;
+        flex-direction: column;
         flex: 2;
+        gap: 20px;
       }
     }
   }

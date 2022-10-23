@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Write = () => {
   return (
-    <div className="write">
+    <div className="writePost">
       <div className="content">Content</div>
       <div className="menu">
         <div className="item">Item 1</div>
