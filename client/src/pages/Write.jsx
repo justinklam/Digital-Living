@@ -32,7 +32,24 @@ const Write = () => {
             <button>Update</button>
           </div>
         </div>
-        <div className="item">Item 2</div>
+        <div className="item">
+          <h1>Category</h1>
+          <input type="radio" name="category" value="art" id="art" />
+          <label htmlFor="art">Art</label>
+          <input type="radio" name="category" value="cinema" id="cinema" />
+          <label htmlFor="cinema">Cinema</label>
+          <input type="radio" name="category" value="design" id="design" />
+          <label htmlFor="design">Design</label>
+          <input type="radio" name="category" value="food" id="food" />
+          <label htmlFor="food">Food</label>
+          <input
+            type="radio"
+            name="category"
+            value="technology"
+            id="technology"
+          />
+          <label htmlFor="technology">Technology</label>
+        </div>
       </div>
     </div>
   );
