@@ -13,7 +13,12 @@ const Write = () => {
       <div className="content">
         <input type="text" placeHolder="Title" />
         <div className="editorContainer">
-          <ReactQuill theme="snow" value={value} onChange={setValue} />
+          <ReactQuill
+            className="editor"
+            theme="snow"
+            value={value}
+            onChange={setValue}
+          />
         </div>
       </div>
       <div className="menu">

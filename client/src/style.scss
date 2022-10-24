@@ -348,6 +348,11 @@ $lightblue: #d0e6f0;
           padding: 10px;
           border: 1px solid $lightblue;
         }
+
+        .editorContainer {
+          height: 300px;
+          overflow: scroll;
+        }
       }
 
       .menu {
