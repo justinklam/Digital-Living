@@ -339,7 +339,15 @@ $lightblue: #d0e6f0;
       gap: 20px;
 
       .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         flex: 5;
+
+        input {
+          padding: 10px;
+          border: 1px solid $lightblue;
+        }
       }
 
       .menu {
