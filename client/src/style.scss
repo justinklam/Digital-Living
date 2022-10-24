@@ -352,6 +352,12 @@ $lightblue: #d0e6f0;
         .editorContainer {
           height: 300px;
           overflow: scroll;
+          border: 1px solid $lightblue;
+
+          .editor {
+            height: 100%;
+            border: none;
+          }
         }
       }
 
