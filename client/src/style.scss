@@ -385,6 +385,29 @@ $lightblue: #d0e6f0;
             text-decoration: underline;
             cursor: pointer;
           }
+
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            // targets first button
+            :first-child {
+              cursor: pointer;
+              color: $lightblue;
+              background-color: white;
+              border: 1px solid $lightblue;
+              padding: 3px 5px;
+            }
+
+            // targets last button
+            :last-child {
+              cursor: pointer;
+              color: $lightblue;
+              background-color: white;
+              border: 1px solid $lightblue;
+              padding: 3px 5px;
+            }
+          }
         }
       }
     }
