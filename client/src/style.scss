@@ -366,6 +366,11 @@ $lightblue: #d0e6f0;
         flex-direction: column;
         flex: 2;
         gap: 20px;
+
+        .item {
+          border: 1px solid lightgray;
+          padding: 10px;
+        }
       }
     }
   }
