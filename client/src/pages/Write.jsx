@@ -31,7 +31,9 @@ const Write = () => {
             <b>Visibility:</b> Public
           </span>
           <input type="file" id="file" name="" style={{ display: "none" }} />
-          <label htmlFor="file">Upload Image</label>
+          <label className="file" htmlFor="file">
+            Upload Image
+          </label>
           <div className="buttons">
             <button>Save as draft</button>
             <button>Update</button>
