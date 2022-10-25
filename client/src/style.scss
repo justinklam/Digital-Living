@@ -393,10 +393,15 @@ $lightblue: #d0e6f0;
             // targets first button
             :first-child {
               cursor: pointer;
-              color: #555;
+              color: teal;
               background-color: white;
               border: 1px solid $lightblue;
               padding: 3px 5px;
+
+              &:hover {
+                color: #555;
+                background-color: $lightblue;
+              }
             }
 
             // targets last button
@@ -406,6 +411,12 @@ $lightblue: #d0e6f0;
               background-color: $lightblue;
               border: 1px solid $lightblue;
               padding: 3px 5px;
+
+              &:hover {
+                color: teal;
+                background-color: white;
+                border: 1px solid teal;
+              }
             }
           }
         }
