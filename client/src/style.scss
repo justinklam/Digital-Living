@@ -361,6 +361,7 @@ $lightblue: #d0e6f0;
         }
       }
 
+      // Side-Menu
       .menu {
         display: flex;
         flex-direction: column;
@@ -417,6 +418,17 @@ $lightblue: #d0e6f0;
                 background-color: white;
                 border: 1px solid teal;
               }
+            }
+          }
+
+          .cat {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            color: teal;
+
+            input {
+              margin-right: 10px;
             }
           }
         }
