@@ -4,3 +4,4 @@
 
 # ENV
 /api/.env
+/client/.env
