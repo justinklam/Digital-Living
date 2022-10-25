@@ -393,7 +393,7 @@ $lightblue: #d0e6f0;
             // targets first button
             :first-child {
               cursor: pointer;
-              color: $lightblue;
+              color: #555;
               background-color: white;
               border: 1px solid $lightblue;
               padding: 3px 5px;
@@ -402,8 +402,8 @@ $lightblue: #d0e6f0;
             // targets last button
             :last-child {
               cursor: pointer;
-              color: $lightblue;
-              background-color: white;
+              color: #555;
+              background-color: $lightblue;
               border: 1px solid $lightblue;
               padding: 3px 5px;
             }
