@@ -8,7 +8,9 @@ import Logo from "../img/logo.png";
 const Footer = () => {
   return (
     <footer>
-      <img src={Logo} alt="logo" />
+      <Link to="/">
+        <img src={Logo} alt="logo" />
+      </Link>
       <span>
         Made by{" "}
         <a href="https://justinklam.netlify.app/">
