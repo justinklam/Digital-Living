@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 // Image assets
 import Logo from "../img/logo.png";
-// import Logo2 from "../img/logo.svg";
 
 const Footer = () => {
   return (
