@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Get
 router.get("/", (req, res) => {
-  res.json("Post Route");
+  res.json("Posts Get Route");
 });
 
 export default router;

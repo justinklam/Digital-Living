@@ -4,7 +4,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 // Routes
+import authRoutes from "./routes/auth.js";
 import postRoutes from "./routes/posts.js";
+import usersRoutes from "./routes/users.js";
 
 const app = express();
 dotenv.config();
@@ -19,7 +21,9 @@ app.use(
 );
 
 // Use Routes
+app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/users", usersRoutes);
 
 app.listen(port, () => {
   console.log(`Server connected at ${port}! 🐅`);
