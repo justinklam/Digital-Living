@@ -1,10 +1,9 @@
 import express from "express";
+// Controller
 
 const router = express.Router();
 
 // Get
-router.get("/", (req, res) => {
-  res.json("Users Get Route");
-});
+router.post("/");
 
 export default router;
