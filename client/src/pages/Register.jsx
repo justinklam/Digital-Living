@@ -8,13 +8,35 @@ const Register = () => {
     password: "",
   });
 
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
     <div className="auth">
       <h1>Login</h1>
       <form>
-        <input required type="text" placeholder="Username" />
-        <input required type="email" placeholder="Email" />
-        <input required type="password" placeholder="Password" />
+        <input
+          required
+          type="text"
+          placeholder="Username"
+          name="username"
+          onChange={handleChange}
+        />
+        <input
+          required
+          type="email"
+          placeholder="Email"
+          name="email"
+          onChange={handleChange}
+        />
+        <input
+          required
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={handleChange}
+        />
         <button>Register</button>
         <p>Error!</p>
         <span>
