@@ -8,7 +8,7 @@ export const register = (req, res) => {
 
   db.query(q, [req.body.email, req.body.username], (err, data) => {
     // fail route
-    if (err) return res.status(500).json("Registration Error:", err);
+    if (err) return res.status(500).json(err);
 
     // success route
     // if user is found - data.length exists
@@ -23,7 +23,7 @@ export const register = (req, res) => {
     const values = [req.body.username, req.body.email, hash];
 
     db.query(q, [values], (err, data) => {
-      if (err) return res.status(500).json("Registration Error:", err);
+      if (err) return res.status(500).json(err);
 
       return res.status(200).json("User has been registered!");
     });
