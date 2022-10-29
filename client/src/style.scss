@@ -1,5 +1,7 @@
-$charcoal: #36454f;
+// Colour Codes
 $lightblue: #d0e6f0;
+$teal: #008080;
+$charcoal: #36454f;
 
 .app {
   display: flex;
@@ -24,7 +26,7 @@ $lightblue: #d0e6f0;
 
       h1 {
         font-size: 20px;
-        color: teal;
+        color: $teal;
         margin-bottom: 20px;
       }
 
@@ -40,13 +42,13 @@ $lightblue: #d0e6f0;
       input {
         padding: 10px;
         border: none;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $charcoal;
       }
 
       button {
         padding: 10px;
         border: none;
-        background-color: teal;
+        background-color: $teal;
         cursor: pointer;
         color: white;
       }
@@ -105,9 +107,9 @@ $lightblue: #d0e6f0;
           border: 1px solid white;
 
           &:hover {
-            color: teal;
+            color: $teal;
             background-color: white;
-            border: 1px solid teal;
+            border: 1px solid $teal;
           }
         }
       }
@@ -194,7 +196,7 @@ $lightblue: #d0e6f0;
               border: none;
               background-color: white;
               border: 1px solid $lightblue;
-              color: teal;
+              color: $teal;
               cursor: pointer;
 
               &:hover {
@@ -318,7 +320,7 @@ $lightblue: #d0e6f0;
             border: none;
             background-color: white;
             border: 1px solid $lightblue;
-            color: teal;
+            color: $teal;
             cursor: pointer;
 
             &:hover {
@@ -394,7 +396,7 @@ $lightblue: #d0e6f0;
             // targets first button
             :first-child {
               cursor: pointer;
-              color: teal;
+              color: $teal;
               background-color: white;
               border: 1px solid $lightblue;
               padding: 3px 5px;
@@ -414,9 +416,9 @@ $lightblue: #d0e6f0;
               padding: 3px 5px;
 
               &:hover {
-                color: teal;
+                color: $teal;
                 background-color: white;
-                border: 1px solid teal;
+                border: 1px solid $teal;
               }
             }
           }
@@ -425,7 +427,7 @@ $lightblue: #d0e6f0;
             display: flex;
             align-items: center;
             gap: 2px;
-            color: teal;
+            color: $teal;
 
             input {
               margin-right: 10px;
