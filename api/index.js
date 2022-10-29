@@ -11,7 +11,7 @@ import usersRoutes from "./routes/users.js";
 const app = express();
 dotenv.config();
 
-const port = process.env.PORT || 8000;
+const port = parseInt(process.env.PORT) || 8000;
 
 app.use(express.json());
 app.use(cors());
