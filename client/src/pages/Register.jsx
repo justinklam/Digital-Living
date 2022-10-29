@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -10,6 +11,11 @@ const Register = () => {
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await axios.post("");
   };
 
   return (
@@ -37,7 +43,7 @@ const Register = () => {
           name="password"
           onChange={handleChange}
         />
-        <button>Register</button>
+        <button onClick={handleSubmit}>Register</button>
         <p>Error!</p>
         <span>
           Do you have an account? <Link to="/login">Login</Link>
