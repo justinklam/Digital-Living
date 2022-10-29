@@ -19,13 +19,13 @@ const Register = () => {
       const res = await axios.post("/auth/register", inputs);
       console.log("Auth:", res);
     } catch (error) {
-      console.log("Login Error:", error);
+      console.log("Auth Error:", error);
     }
   };
 
   return (
     <div className="auth">
-      <h1>Login</h1>
+      <h1>Register</h1>
       <form>
         <input
           required
