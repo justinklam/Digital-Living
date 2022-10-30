@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Register = () => {
@@ -10,6 +10,8 @@ const Register = () => {
   });
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -17,11 +19,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8080/api/auth/register",
-        inputs
-      );
-      console.log("Auth:", res);
+      await axios.post("http://localhost:8080/api/auth/register", inputs);
+      navigate("/login");
     } catch (err) {
       setError(err.response.data);
       console.log(error);
@@ -54,7 +53,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <button onClick={handleSubmit}>Register</button>
-        {error && <p>Error!</p>}
+        {error && <p>Error: Username or Email is in use!</p>}
         <span>
           Do you have an account? <Link to="/login">Login</Link>
         </span>
