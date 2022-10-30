@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8080/api/auth/register", inputs);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       setError(err.response.data);
       console.log(error);
@@ -33,7 +33,7 @@ const Login = () => {
         <input type="text" placeholder="Username" />
         <input type="password" placeholder="Password" />
         <button>Login</button>
-        <p>Error!</p>
+        {error && <p>Error: {error}</p>}
         <span>
           Don't have an account? <Link to="/register">Register</Link>
         </span>
