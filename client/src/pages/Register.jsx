@@ -8,7 +8,7 @@ const Register = () => {
     email: "",
     password: "",
   });
-  const [err, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -22,9 +22,9 @@ const Register = () => {
         inputs
       );
       console.log("Auth:", res);
-    } catch (error) {
-      setError(error.response.data);
-      console.log("Auth Error:", err);
+    } catch (err) {
+      setError(err.response.data);
+      console.log(error);
     }
   };
 
@@ -54,7 +54,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <button onClick={handleSubmit}>Register</button>
-        <p>Error!</p>
+        {error && <p>Error!</p>}
         <span>
           Do you have an account? <Link to="/login">Login</Link>
         </span>
