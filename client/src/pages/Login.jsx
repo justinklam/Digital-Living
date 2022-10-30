@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/auth/register", inputs);
+      await axios.post("http://localhost:8080/api/auth/login", inputs);
       navigate("/");
     } catch (err) {
       setError(err.response.data);
@@ -30,9 +30,19 @@ const Login = () => {
     <div className="auth">
       <h1>Login</h1>
       <form>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button>Login</button>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={handleChange}
+        />
+        <button onClick={handleSubmit}>Login</button>
         {error && <p>Error: {error}</p>}
         <span>
           Don't have an account? <Link to="/register">Register</Link>
