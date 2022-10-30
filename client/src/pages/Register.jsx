@@ -8,6 +8,7 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const [err, setError] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -22,7 +23,8 @@ const Register = () => {
       );
       console.log("Auth:", res);
     } catch (error) {
-      console.log("Auth Error:", error);
+      setError(error.response.data);
+      console.log("Auth Error:", err);
     }
   };
 
