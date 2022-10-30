@@ -12,7 +12,8 @@ export const register = (req, res) => {
 
     // success route
     // if user is found - data.length exists
-    if (data.length) return res.status(409).json("User account exists!");
+    if (data.length)
+      return res.status(409).json("User account already exists!");
 
     // Hash the password and create a user
     const salt = bcrypt.genSaltSync(10);
