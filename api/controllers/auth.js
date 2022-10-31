@@ -43,6 +43,9 @@ export const login = (req, res) => {
   });
 
   // CHECK PASSWORD
+  const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0]);
+
+  if (!isPasswordCorrect) return res.status(400).json("Incorrect Credentials!");
 };
 
 // LOGOUT
