@@ -50,6 +50,15 @@ export const login = (req, res) => {
 
   // Send user info that ID's them
   const token = jwt.sign({ id: data[0].id }, process.env.JWT_KEY);
+  // Remove password from response
+  const { password, ...other } = data[0];
+
+  res
+    .cookie("access_token", token, {
+      httpOnly: true,
+    })
+    .status(200)
+    .json(other);
 };
 
 // LOGOUT
