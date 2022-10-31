@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// Components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const Login = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -27,28 +31,32 @@ const Login = () => {
   };
 
   return (
-    <div className="auth">
-      <h1>Login</h1>
-      <form>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-        />
-        <button onClick={handleSubmit}>Login</button>
-        {error && <p>Error: {error}</p>}
-        <span>
-          Don't have an account? <Link to="/register">Register</Link>
-        </span>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="auth">
+        <h1>Login</h1>
+        <form>
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleChange}
+          />
+          <button onClick={handleSubmit}>Login</button>
+          {error && <p>Error: {error}</p>}
+          <span>
+            Don't have an account? <Link to="/register">Register</Link>
+          </span>
+        </form>
+      </div>
+      <Footer />
+    </>
   );
 };
 
