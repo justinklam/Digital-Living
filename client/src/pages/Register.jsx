@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// Components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
@@ -28,37 +32,41 @@ const Register = () => {
   };
 
   return (
-    <div className="auth">
-      <h1>Register</h1>
-      <form>
-        <input
-          required
-          type="text"
-          placeholder="Username"
-          name="username"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="email"
-          placeholder="Email"
-          name="email"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-        />
-        <button onClick={handleSubmit}>Register</button>
-        {error && <p>Error: Username or Email is in use!</p>}
-        <span>
-          Do you have an account? <Link to="/login">Login</Link>
-        </span>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="auth">
+        <h1>Register</h1>
+        <form>
+          <input
+            required
+            type="text"
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleChange}
+          />
+          <button onClick={handleSubmit}>Register</button>
+          {error && <p>Error: Username or Email is in use!</p>}
+          <span>
+            Do you have an account? <Link to="/login">Login</Link>
+          </span>
+        </form>
+      </div>
+      <Footer />
+    </>
   );
 };
 
