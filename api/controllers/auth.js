@@ -51,7 +51,10 @@ export const login = (req, res) => {
       return res.status(400).json("Incorrect Credentials!");
 
     // Send user info that ID's them
-    const token = jwt.sign({ id: data[0].id }, process.env.JWT_KEY);
+    const token = jwt.sign({ id: data[0].id }, process.env.JWT_KEY, {
+      expiresIn: "7d", // token expires in 7 days
+    });
+
     // Remove password from response
     const { password, ...other } = data[0];
 
