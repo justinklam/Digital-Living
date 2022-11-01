@@ -41,24 +41,27 @@ export const login = (req, res) => {
     if (err) return res.status(500).json(err);
 
     if (data.length === 0) return res.status(404).json("User not found!");
+    // CHECK PASSWORD
+    const isPasswordCorrect = bcrypt.compareSync(
+      req.body.password,
+      data[0].password
+    );
+
+    if (!isPasswordCorrect)
+      return res.status(400).json("Incorrect Credentials!");
+
+    // Send user info that ID's them
+    const token = jwt.sign({ id: data[0].id }, process.env.JWT_KEY);
+    // Remove password from response
+    const { password, ...other } = data[0];
+
+    res
+      .cookie("access_token", token, {
+        httpOnly: true,
+      })
+      .status(200)
+      .json(other);
   });
-
-  // CHECK PASSWORD
-  const isPasswordCorrect = bcrypt.compareSync(req.body.password, data[0]);
-
-  if (!isPasswordCorrect) return res.status(400).json("Incorrect Credentials!");
-
-  // Send user info that ID's them
-  const token = jwt.sign({ id: data[0].id }, process.env.JWT_KEY);
-  // Remove password from response
-  const { password, ...other } = data[0];
-
-  res
-    .cookie("access_token", token, {
-      httpOnly: true,
-    })
-    .status(200)
-    .json(other);
 };
 
 // LOGOUT
