@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 export const AuthContext = createContext();
@@ -23,4 +23,8 @@ export const AuthContextProvider = ({ children }) => {
     await axios.post("/auth/logout");
     setCurrentUser(null);
   };
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
 };
