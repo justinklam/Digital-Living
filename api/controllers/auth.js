@@ -69,5 +69,11 @@ export const login = (req, res) => {
 
 // LOGOUT
 export const logout = (req, res) => {
-  console.log("logout");
+  res
+    .clearCookie("access_token", {
+      sameSite: "none",
+      secure: true,
+    })
+    .status(200)
+    .json("User has been logged out!");
 };
