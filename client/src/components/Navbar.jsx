@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link className="link" to="/?cat=technology">
             <h6>TECHNOLOGY</h6>
           </Link>
-          <span>User 1</span>
+          <span>{currentUser?.username}</span>
           <span>Logout</span>
           <span className="write">
             <Link className="link" to="/write">
