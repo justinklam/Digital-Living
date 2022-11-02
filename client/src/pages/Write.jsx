@@ -11,7 +11,7 @@ const Write = () => {
   return (
     <div className="writePost">
       <div className="content">
-        <input type="text" placeHolder="Title" />
+        <input type="text" placeholder="Title" />
         <div className="editorContainer">
           <ReactQuill
             className="editor"
