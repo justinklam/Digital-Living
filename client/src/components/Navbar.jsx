@@ -6,7 +6,7 @@ import { AuthContext } from "../context/authContext";
 import Logo from "../img/logo.png";
 
 const Navbar = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, logout } = useContext(AuthContext);
 
   return (
     <div className="navbar">
@@ -33,7 +33,13 @@ const Navbar = () => {
             <h6>TECHNOLOGY</h6>
           </Link>
           <span>{currentUser?.username}</span>
-          <span>Logout</span>
+          {currentUser ? (
+            <span>Logout</span>
+          ) : (
+            <Link className="link" to="/login">
+              Login
+            </Link>
+          )}
           <span className="write">
             <Link className="link" to="/write">
               Post!
