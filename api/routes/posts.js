@@ -23,6 +23,6 @@ router.post("/", addPost);
 router.delete("/:id", deletePost);
 
 // Update Post
-router.update("/:id", updatePost);
+router.put("/:id", updatePost);
 
 export default router;
