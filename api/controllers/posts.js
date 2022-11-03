@@ -1,5 +1,8 @@
 export const getPosts = (req, res) => {
-  res.json("fromController");
+  // req.query.cat takes everything after the URL address cat
+  const q = req.query.cat
+    ? "SELECT * FROM posts WHERE cat=?"
+    : "SELECT * FROM posts";
 };
 
 export const getPost = (req, res) => {
