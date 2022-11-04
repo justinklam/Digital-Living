@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 // Components
 import Menu from "../components/Menu";
@@ -9,6 +10,23 @@ import editIcon from "../img/edit.png";
 import deleteIcon from "../img/delete.png";
 
 const Single = () => {
+  const [post, setPost] = useState({});
+
+  // To locate URL
+  const location = useLocation();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:8080/api/posts/}`);
+        setPost(res.data);
+      } catch (error) {
+        console.log("Home:", error);
+      }
+    };
+    fetchData();
+  }, [location]);
+
   return (
     <div className="single">
       <div className="content">
