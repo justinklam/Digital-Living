@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/posts");
+        const res = await axios.get("http://localhost:8080/api/posts");
         setPosts(res.data);
       } catch (error) {
         console.log(error);
