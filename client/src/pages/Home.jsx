@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+
+  const location = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
