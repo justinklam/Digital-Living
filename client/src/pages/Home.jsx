@@ -5,19 +5,22 @@ import axios from "axios";
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
-  const location = useLocation();
+  // To locate URL
+  const category = useLocation().search;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/posts");
+        const res = await axios.get(
+          `http://localhost:8080/api/posts${category}`
+        );
         setPosts(res.data);
       } catch (error) {
         console.log("Home:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [category]);
 
   // const posts = [
   //   {
