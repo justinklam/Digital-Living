@@ -2,7 +2,7 @@ import {
   createBrowserRouter,
   Outlet,
   RouterProvider,
-  Route,
+  // Route,
 } from "react-router-dom";
 import "./style.scss";
 

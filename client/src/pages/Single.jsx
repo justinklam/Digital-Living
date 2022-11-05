@@ -29,7 +29,6 @@ const Single = () => {
           `http://localhost:8080/api/posts/${postId}`
         );
         setPost(res.data);
-        console.log("post", post);
       } catch (error) {
         console.log("Home:", error);
       }
