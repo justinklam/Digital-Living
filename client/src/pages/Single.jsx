@@ -40,12 +40,9 @@ const Single = () => {
     <div className="single">
       <div className="content">
         {/* If post exists, render. To resolve loading errors */}
-        <img src={post?.img} alt="img" />
+        <img src={post?.img} alt="" />
         <div className="user">
-          <img
-            src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="img2"
-          />
+          {post.userImg && <img src={post.userImg} alt="" />}
           <div className="info">
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
