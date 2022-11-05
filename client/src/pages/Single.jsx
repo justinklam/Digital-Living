@@ -21,14 +21,16 @@ const Single = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/posts/}`);
+        const res = await axios.get(
+          `http://localhost:8080/api/posts/${postId}`
+        );
         setPost(res.data);
       } catch (error) {
         console.log("Home:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [postId]);
 
   return (
     <div className="single">
