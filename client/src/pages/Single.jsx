@@ -15,6 +15,9 @@ const Single = () => {
   // To locate URL
   const location = useLocation();
 
+  // To Pull post number
+  const postId = location.pathname.split("/")[2];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,7 +28,7 @@ const Single = () => {
       }
     };
     fetchData();
-  }, [location]);
+  }, []);
 
   return (
     <div className="single">
