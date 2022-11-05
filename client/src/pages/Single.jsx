@@ -35,17 +35,15 @@ const Single = () => {
   return (
     <div className="single">
       <div className="content">
-        <img
-          src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="img"
-        />
+        {/* If post exists, render. To resolve loading errors */}
+        <img src={post?.img} alt="img" />
         <div className="user">
           <img
             src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="img2"
           />
           <div className="info">
-            <span>user1</span>
+            <span>{post.username}</span>
             <p>Posted 2 days ago</p>
           </div>
           <div className="edit">
