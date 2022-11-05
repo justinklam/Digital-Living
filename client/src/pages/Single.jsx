@@ -50,14 +50,16 @@ const Single = () => {
             <span>{post.username}</span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
-          <div className="edit">
-            <Link to={`/write?edit=2`}>
-              <img className="edit-inner" src={editIcon} alt="edit" />
-            </Link>
-            <Link>
-              <img className="delete-inner" src={deleteIcon} alt="delete" />
-            </Link>
-          </div>
+          {currentUser.username === post.username && (
+            <div className="edit">
+              <Link to={`/write?edit=2`}>
+                <img className="edit-inner" src={editIcon} alt="edit" />
+              </Link>
+              <Link>
+                <img className="delete-inner" src={deleteIcon} alt="delete" />
+              </Link>
+            </div>
+          )}
         </div>
         <h1>Title - Placeholder</h1>
         <p>
