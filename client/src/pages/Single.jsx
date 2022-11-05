@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import moment from "moment";
 
 // Components
 import Menu from "../components/Menu";
@@ -44,7 +45,7 @@ const Single = () => {
           />
           <div className="info">
             <span>{post.username}</span>
-            <p>Posted 2 days ago</p>
+            <p>Posted {moment(post.date).fromNow()}</p>
           </div>
           <div className="edit">
             <Link to={`/write?edit=2`}>
