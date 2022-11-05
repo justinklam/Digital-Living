@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 import axios from "axios";
 import moment from "moment";
 
@@ -16,8 +17,10 @@ const Single = () => {
   // To locate URL
   const location = useLocation();
 
-  // To Pull post number
+  // To pull post number
   const postId = location.pathname.split("/")[2];
+
+  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
