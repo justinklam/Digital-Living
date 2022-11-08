@@ -40,7 +40,9 @@ const Single = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/posts/${postId}`);
+      await axios.delete(`http://localhost:8080/api/posts/${postId}`, {
+        withCredentials: true,
+      });
       navigate("/");
     } catch (error) {
       console.log("Delete:", error);
