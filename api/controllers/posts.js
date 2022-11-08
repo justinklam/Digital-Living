@@ -32,7 +32,7 @@ export const addPost = (req, res) => {
 
 export const deletePost = (req, res) => {
   const token = req.cookies.access_token;
-  if (!token) return res.status(401).json("Not authenticated!");
+  if (!token) return res.status(401).json("Invalid token authentication!");
 
   jwt.verify(token, process.env.JWT_KEY, (err, userInfo) => {
     if (err) return res.status(403).json("Token is invalid!");
