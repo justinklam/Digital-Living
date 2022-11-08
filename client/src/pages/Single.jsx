@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import axios from "axios";
 import moment from "moment";
@@ -17,6 +17,8 @@ const Single = () => {
   // To locate URL
   const location = useLocation();
 
+  const navigate = useNavigate();
+
   // To pull post number
   const postId = location.pathname.split("/")[2];
 
@@ -30,7 +32,7 @@ const Single = () => {
         );
         setPost(res.data);
       } catch (error) {
-        console.log("Home:", error);
+        console.log("Post:", error);
       }
     };
     fetchData();
@@ -38,12 +40,10 @@ const Single = () => {
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(
-        `http://localhost:8080/api/posts/${postId}`
-      );
-      setPost(res.data);
+      await axios.delete(`http://localhost:8080/api/posts/${postId}`);
+      navigate("/");
     } catch (error) {
-      console.log("Home:", error);
+      console.log("Delete:", error);
     }
   };
 
