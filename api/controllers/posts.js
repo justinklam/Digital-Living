@@ -36,6 +36,19 @@ export const deletePost = (req, res) => {
 
   jwt.verify(token, process.env.JWT_KEY, (err, userInfo) => {
     if (err) return res.status(403).json("Token is invalid!");
+
+    const postId = req.params.id;
+    // If userID is not the post ID, error
+    const q = "DELETE FROM posts WHERE `id` = ? AND `uid` = ?";
+
+    db.query(q, [postId, userInfo.id], (err, data) => {
+      if (err)
+        return res
+          .status(403)
+          .json("Invalid authentication! This post does not belong to you!");
+
+      return res.json("Post has been deleted!");
+    });
   });
 };
 
