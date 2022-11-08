@@ -30,7 +30,9 @@ export const addPost = (req, res) => {
 };
 
 export const deletePost = (req, res) => {
-  res.json("fromController");
+  const token = req.cookies.access_token;
+
+  if (!token) return res.status(401).json("Not authenticated!");
 };
 
 export const updatePost = (req, res) => {
