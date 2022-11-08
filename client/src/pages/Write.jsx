@@ -11,6 +11,10 @@ const Write = () => {
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="writePost">
       <div className="content">
@@ -49,7 +53,7 @@ const Write = () => {
           </label>
           <div className="buttons">
             <button>Save as draft</button>
-            <button>Update</button>
+            <button onClick={handleSubmit}>Publish</button>
           </div>
         </div>
         <div className="item">
