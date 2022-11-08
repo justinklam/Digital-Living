@@ -36,6 +36,17 @@ const Single = () => {
     fetchData();
   }, [postId]);
 
+  const handleDelete = async () => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:8080/api/posts/${postId}`
+      );
+      setPost(res.data);
+    } catch (error) {
+      console.log("Home:", error);
+    }
+  };
+
   return (
     <div className="single">
       <div className="content">
@@ -53,7 +64,12 @@ const Single = () => {
                 <img className="edit-inner" src={editIcon} alt="edit" />
               </Link>
               <Link>
-                <img className="delete-inner" src={deleteIcon} alt="delete" />
+                <img
+                  className="delete-inner"
+                  src={deleteIcon}
+                  alt="delete"
+                  onClick={handleDelete}
+                />
               </Link>
             </div>
           )}
