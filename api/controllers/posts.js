@@ -1,4 +1,5 @@
 import { db } from "../db.js";
+import jwt from "jsonwebtoken";
 
 export const getPosts = (req, res) => {
   // req.query.cat takes everything after the URL address cat
@@ -31,8 +32,11 @@ export const addPost = (req, res) => {
 
 export const deletePost = (req, res) => {
   const token = req.cookies.access_token;
-
   if (!token) return res.status(401).json("Not authenticated!");
+
+  jwt.verify(token, process.env.JWT_KEY, (err, userInfo) => {
+    if (err) return res.status(403).json("Token is invalid!");
+  });
 };
 
 export const updatePost = (req, res) => {
