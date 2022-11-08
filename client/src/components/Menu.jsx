@@ -1,26 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Menu = ({ cat }) => {
-  const posts = [
-    {
-      id: 1,
-      title: "Title 1",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
-      img: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 2,
-      title: "Title 2",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
-      img: "https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-    {
-      id: 3,
-      title: "Title 3",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
-      img: "https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    },
-  ];
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:8080/api/posts/?cat=${cat}`
+        );
+        setPosts(res.data);
+      } catch (error) {
+        console.log("Home:", error);
+      }
+    };
+    fetchData();
+  }, [cat]);
+
+  // const posts = [
+  //   {
+  //     id: 1,
+  //     title: "Title 1",
+  //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
+  //     img: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Title 2",
+  //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
+  //     img: "https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Title 3",
+  //     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pulvinar erat. In leo velit, blandit sed volutpat vel, dapibus et massa. Cras consectetur, diam vel volutpat auctor, libero ex eleifend purus, eget congue purus purus vel elit. Donec eu lorem rutrum, tempus enim feugiat, hendrerit tellus. Phasellus ac iaculis felis. Vivamus molestie nunc sapien, eget volutpat ante pulvinar ut. Integer efficitur suscipit ex ut laoreet. Duis a rhoncus magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis sem vitae nunc elementum posuere sit amet vel libero. Donec lorem nisi, mollis vel interdum sed, auctor id magna. Etiam venenatis nibh sed tortor lacinia dapibus",
+  //     img: "https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  //   },
+  // ];
 
   return (
     <div className="menu">
