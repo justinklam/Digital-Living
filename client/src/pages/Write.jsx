@@ -56,22 +56,46 @@ const Write = () => {
           <h1>Category</h1>
 
           <div className="cat">
-            <input type="radio" name="category" value="art" id="art" />
+            <input
+              type="radio"
+              name="category"
+              value="art"
+              id="art"
+              onChange={(e) => setCat(e.target.value)}
+            />
             <label htmlFor="art">Art</label>
           </div>
 
           <div className="cat">
-            <input type="radio" name="category" value="cinema" id="cinema" />
+            <input
+              type="radio"
+              name="category"
+              value="cinema"
+              id="cinema"
+              onChange={(e) => setCat(e.target.value)}
+            />
             <label htmlFor="cinema">Cinema</label>
           </div>
 
           <div className="cat">
-            <input type="radio" name="category" value="design" id="design" />
+            <input
+              type="radio"
+              name="category"
+              value="design"
+              id="design"
+              onChange={(e) => setCat(e.target.value)}
+            />
             <label htmlFor="design">Design</label>
           </div>
 
           <div className="cat">
-            <input type="radio" name="category" value="food" id="food" />
+            <input
+              type="radio"
+              name="category"
+              value="food"
+              id="food"
+              onChange={(e) => setCat(e.target.value)}
+            />
             <label htmlFor="food">Food</label>
           </div>
 
@@ -81,6 +105,7 @@ const Write = () => {
               name="category"
               value="technology"
               id="technology"
+              onChange={(e) => setCat(e.target.value)}
             />
             <label htmlFor="technology">Technology</label>
           </div>
