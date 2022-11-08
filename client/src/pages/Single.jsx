@@ -78,21 +78,6 @@ const Single = () => {
         </div>
         <h1>{post.title}</h1>
         {post.desc}
-        {/* <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut leo a
-          lectus rutrum ornare ac laoreet lorem. Cras sit amet purus sed arcu
-          tempus iaculis. Fusce consequat eros ex, sit amet pretium arcu
-          sagittis id. Interdum et malesuada fames ac ante ipsum primis in
-          faucibus. Pellentesque vel commodo lacus, aliquet interdum metus.
-          Aliquam condimentum leo et vestibulum vehicula. Vivamus lobortis
-          finibus augue a pellentesque. Fusce quis ligula nulla. In hac
-          habitasse platea dictumst. Integer egestas ipsum in nisl suscipit
-          semper. Nam eu rhoncus massa. Fusce a imperdiet lacus. In felis
-          tellus, feugiat tempor orci quis, condimentum posuere leo. Etiam at
-          commodo dolor, sed porttitor est. Vestibulum sit amet purus sit amet
-          quam rutrum fermentum. Cras eget sagittis ipsum. Morbi euismod viverra
-          risus, at ultrices dolor fermentum et. Mauris eu fermentum lacus.
-        </p> */}
       </div>
       <Menu />
     </div>
