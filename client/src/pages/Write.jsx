@@ -8,13 +8,17 @@ import "react-quill/dist/quill.snow.css";
 const Write = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
-  const [img, setImg] = useState(null);
+  const [file, setFile] = useState(null);
   const [cat, setCat] = useState("");
 
   return (
     <div className="writePost">
       <div className="content">
-        <input type="text" placeholder="Title" />
+        <input
+          type="text"
+          placeholder="Title"
+          onChange={(e) => setTitle(e.target.value)}
+        />
         <div className="editorContainer">
           <ReactQuill
             className="editor"
@@ -33,7 +37,13 @@ const Write = () => {
           <span>
             <b>Visibility:</b> Public
           </span>
-          <input type="file" id="file" name="" style={{ display: "none" }} />
+          <input
+            type="file"
+            id="file"
+            name=""
+            style={{ display: "none" }}
+            onChange={(e) => setFile(e.target.files[0])}
+          />
           <label className="file" htmlFor="file">
             Upload Image
           </label>
