@@ -31,7 +31,7 @@ const upload = multer({ dest: "uploads/" });
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/users", usersRoutes);
-app.post("/upload", upload.single("file"), function (req, res, next) {
+app.post("/api/upload", upload.single("file"), function (req, res, next) {
   res.status(200).json("Image has been uploaded!");
 });
 
