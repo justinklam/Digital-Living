@@ -27,13 +27,16 @@ app.use(
 // Upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "/tmp/my-uploads");
+    cb(null, "../client/public/upload");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname);
   },
   // Unique Name Randomizer
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix);
-  },
+  // filename: function (req, file, cb) {
+  //   const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+  //   cb(null, file.fieldname + "-" + uniqueSuffix);
+  // },
 });
 const upload = multer({ storage });
 
