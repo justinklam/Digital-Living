@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 
@@ -15,6 +16,12 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
+
+      const res = await axios.post(
+        "http://localhost:8080/api/upload",
+        formData
+      );
+      console.log(res.data);
     } catch (error) {
       console.log("Upload:", error);
     }
@@ -22,6 +29,7 @@ const Write = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    upload();
   };
 
   return (
