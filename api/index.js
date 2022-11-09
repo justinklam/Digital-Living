@@ -45,7 +45,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/users", usersRoutes);
 app.post("/api/upload", upload.single("file"), function (req, res, next) {
-  res.status(200).json("Image has been uploaded!");
+  const file = req.file;
+  res.status(200).json(file.filename);
 });
 
 app.listen(port, () => {
