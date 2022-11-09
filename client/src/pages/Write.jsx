@@ -11,6 +11,15 @@ const Write = () => {
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState("");
 
+  const upload = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+    } catch (error) {
+      console.log("Upload:", error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
