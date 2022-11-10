@@ -44,6 +44,7 @@ const Write = () => {
       <div className="content">
         <input
           type="text"
+          value={title}
           placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -86,6 +87,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={cat === "art"}
               name="category"
               value="art"
               id="art"
@@ -97,6 +99,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={cat === "cinema"}
               name="category"
               value="cinema"
               id="cinema"
@@ -108,6 +111,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={cat === "design"}
               name="category"
               value="design"
               id="design"
@@ -119,6 +123,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={cat === "food"}
               name="category"
               value="food"
               id="food"
@@ -130,6 +135,7 @@ const Write = () => {
           <div className="cat">
             <input
               type="radio"
+              checked={cat === "technology"}
               name="category"
               value="technology"
               id="technology"
