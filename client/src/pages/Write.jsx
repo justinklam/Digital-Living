@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import moment from "moment";
 
 // React Quill
 import ReactQuill from "react-quill";
@@ -47,6 +48,7 @@ const Write = () => {
             desc: value,
             cat,
             img: file ? imgUrl : "",
+            date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
           });
     } catch (error) {
       console.log("Post Submit:", error);
