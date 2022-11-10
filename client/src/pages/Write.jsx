@@ -21,7 +21,7 @@ const Write = () => {
         "http://localhost:8080/api/upload",
         formData
       );
-      console.log(res.data);
+      return res.data;
     } catch (error) {
       console.log("Upload:", error);
     }
@@ -29,7 +29,11 @@ const Write = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    upload();
+    const imgUrl = upload();
+    try {
+    } catch (error) {
+      console.log("Post Submit:", error);
+    }
   };
 
   return (
