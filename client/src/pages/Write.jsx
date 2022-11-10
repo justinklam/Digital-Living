@@ -1,13 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // React Quill
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const Write = () => {
-  const [value, setValue] = useState("");
+  const state = useLocation().state;
+
+  // If state exists, use the title from it else ""
+  const [value, setValue] = useState(state?.title || "");
   const [title, setTitle] = useState("");
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState("");
