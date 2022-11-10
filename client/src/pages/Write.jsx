@@ -11,9 +11,9 @@ const Write = () => {
 
   // If state exists, use the title from it else ""
   const [value, setValue] = useState(state?.title || "");
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(state?.desc || "");
   const [file, setFile] = useState(null);
-  const [cat, setCat] = useState("");
+  const [cat, setCat] = useState(state?.cat || "");
 
   const upload = async () => {
     try {
