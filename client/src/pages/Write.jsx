@@ -33,7 +33,21 @@ const Write = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const imgUrl = upload();
+
     try {
+      state
+        ? await axios.put(`http://localhost:8080/api/posts/${state.id}`, {
+            title,
+            desc: value,
+            cat,
+            img: file ? imgUrl : "",
+          })
+        : await axios.post(`http://localhost:8080/api/posts`, {
+            title,
+            desc: value,
+            cat,
+            img: file ? imgUrl : "",
+          });
     } catch (error) {
       console.log("Post Submit:", error);
     }
