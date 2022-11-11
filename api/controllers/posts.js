@@ -27,7 +27,12 @@ export const getPost = (req, res) => {
 };
 
 export const addPost = (req, res) => {
-  res.json("fromController");
+  const token = req.cookies.access_token;
+  if (!token) return res.status(401).json("Invalid token authentication!");
+
+  jwt.verify(token, process.env.JWT_KEY, (err, userInfo) => {
+    if (err) return res.status(403).json("Token is invalid!");
+  });
 };
 
 export const deletePost = (req, res) => {
