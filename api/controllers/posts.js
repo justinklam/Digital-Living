@@ -32,6 +32,9 @@ export const addPost = (req, res) => {
 
   jwt.verify(token, process.env.JWT_KEY, (err, userInfo) => {
     if (err) return res.status(403).json("Token is invalid!");
+
+    const q =
+      "INSERT INTO posts(`title`, `desc`, `img`, `cat`, `date`, `uid`) VALUES (?) ";
   });
 };
 
