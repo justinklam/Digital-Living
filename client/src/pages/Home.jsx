@@ -49,7 +49,8 @@ const Home = () => {
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
-              <img src={post.img} alt="img" />
+              {/* <img src={post.img} alt="img" /> */}
+              <img src={`../upload/${post.img}`} alt="img" />
             </div>
             <div className="content">
               <h1>{post.title}</h1>
