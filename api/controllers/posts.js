@@ -35,6 +35,21 @@ export const addPost = (req, res) => {
 
     const q =
       "INSERT INTO posts(`title`, `desc`, `img`, `cat`, `date`, `uid`) VALUES (?) ";
+
+    const values = [
+      req.body.title,
+      req.body.desc,
+      req.body.img,
+      req.body.cat,
+      req.body.date,
+      userInfo.id,
+    ];
+
+    db.query(q, [values], (err, data) => {
+      if (err) return res.status(500).json(err);
+
+      return res.json("Post has been created!");
+    });
   });
 };
 
