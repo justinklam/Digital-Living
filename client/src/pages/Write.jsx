@@ -39,19 +39,31 @@ const Write = () => {
 
     try {
       state
-        ? await axios.put(`http://localhost:8080/api/posts/${state.id}`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-          })
-        : await axios.post(`http://localhost:8080/api/posts`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-            date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-          });
+        ? await axios.put(
+            `http://localhost:8080/api/posts/${state.id}`,
+            {
+              title,
+              desc: value,
+              cat,
+              img: file ? imgUrl : "",
+            },
+            {
+              withCredentials: true,
+            }
+          )
+        : await axios.post(
+            `http://localhost:8080/api/posts`,
+            {
+              title,
+              desc: value,
+              cat,
+              img: file ? imgUrl : "",
+              date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+            },
+            {
+              withCredentials: true,
+            }
+          );
       navigate("/");
     } catch (error) {
       console.log("Post Submit:", error);
