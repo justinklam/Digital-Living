@@ -35,7 +35,7 @@ const Write = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const imgUrl = upload();
+    const imgUrl = await upload();
 
     try {
       state
