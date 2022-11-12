@@ -1,11 +1,13 @@
 import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 
+// Retrieve all posts
 export const getPosts = (req, res) => {
   // req.query.cat takes everything after the URL address cat
+  // set max post limit on front page to 10
   const q = req.query.cat
     ? "SELECT * FROM posts WHERE cat=?"
-    : "SELECT * FROM posts";
+    : "SELECT * FROM posts LIMIT 10";
 
   db.query(q, [req.query.cat], (err, data) => {
     if (err) return res.status(500).send(err);
@@ -14,6 +16,7 @@ export const getPosts = (req, res) => {
   });
 };
 
+// Retrieve 1 post
 export const getPost = (req, res) => {
   // users u posts p to shorten
   const q =
