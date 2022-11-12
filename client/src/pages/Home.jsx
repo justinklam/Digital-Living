@@ -43,6 +43,12 @@ const Home = () => {
   //   },
   // ];
 
+  // to remove html tags on text body
+  const getText = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent;
+  };
+
   return (
     <div className="home">
       <div className="posts">
@@ -54,7 +60,7 @@ const Home = () => {
             </div>
             <div className="content">
               <h1>{post.title}</h1>
-              <p>{post.desc}</p>
+              <p>{getText(post.desc)}</p>
               <Link className="link" to={`/post/${post.id}`}>
                 <button>Read More</button>
               </Link>
