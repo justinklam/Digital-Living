@@ -3,9 +3,9 @@
 ## Description
 
 <p>Welcome to <b>J-Blog</b>, a Microblog for user submitted posts!</p>
-<p>Front-end built with JavaScript, React and React-Quill. 
-Backend uses Express and JWT for authorization. 
-Database is built with MySQL.</p>
+<p>Front-end built with JavaScript, React and React-Quill. </p>
+<p>Backend uses Express and JWT for authorization. </p>
+<p>Database is built with MySQL.</p>
 
 ## Preview
 
