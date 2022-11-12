@@ -3,7 +3,9 @@
 ## Description
 
 <p>Welcome to <b>J-Blog</b>, a Microblog for user submitted posts!</p>
-<p>Front-end built with JavaScript, React and React-Quill. Backend uses Express and JWT for authorization. Database is built with MySQL.</p>
+<p>Front-end built with JavaScript, React and React-Quill. 
+Backend uses Express and JWT for authorization. 
+Database is built with MySQL.</p>
 
 ## Preview
 
@@ -14,8 +16,8 @@
 <p>Write/Submission</p>
 <img src="https://user-images.githubusercontent.com/85145076/201496282-07bc9b9f-c3a2-46a0-9d8b-be822f2bbc36.png"  width="700" style="border-radius:10px;margin-bottom:1rem;" />
 <p>Login</p>
-<img src="https://user-images.githubusercontent.com/85145076/201496285-5c0a9807-129b-461a-8ebe-a9c3bfa93ff0.png"  width="700" style="border-radius:10px;margin-bottom:1rem;" />
-<p>Home Categories Page</p>
+<img src="https://user-images.githubusercontent.com/85145076/201496404-9cda075c-fea0-49f6-99d3-fde2e071f55f.png"  width="700" style="border-radius:10px;margin-bottom:1rem;" />
+<p>Home - Categories Page</p>
 <img src="https://user-images.githubusercontent.com/85145076/201496286-2e7509c7-7654-4776-85dc-727bbd0f42cb.png"  width="700" style="border-radius:10px;margin-bottom:1rem;" />
 
 ### Tech stack
