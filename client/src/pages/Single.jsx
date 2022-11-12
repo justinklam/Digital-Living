@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 import axios from "axios";
 import moment from "moment";
+import DOMPurify from "dompurify";
 
 // Components
 import Menu from "../components/Menu";
@@ -84,7 +85,11 @@ const Single = () => {
           )}
         </div>
         <h1>{post.title}</h1>
-        {getText(post.desc)}
+        <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.desc),
+          }}
+        ></p>{" "}
       </div>
       <Menu cat={post.cat} />
     </div>
