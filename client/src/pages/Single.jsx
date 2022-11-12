@@ -49,6 +49,12 @@ const Single = () => {
     }
   };
 
+  // to remove html tags on text body
+  const getText = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.body.textContent;
+  };
+
   return (
     <div className="single">
       <div className="content">
@@ -77,7 +83,7 @@ const Single = () => {
           )}
         </div>
         <h1>{post.title}</h1>
-        {post.desc}
+        {getText(post.desc)}
       </div>
       <Menu cat={post.cat} />
     </div>
