@@ -43,7 +43,7 @@ const Navbar = () => {
           {currentUser ? (
             <span className="write">
               <Link className="link" to="/write">
-                Post!
+                Write
               </Link>
             </span>
           ) : (
